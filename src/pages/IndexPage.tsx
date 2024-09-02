@@ -13,9 +13,11 @@ export const IndexPage = () => {
 
 			{hasDrinks ? (
 				<>
-					{drinks.drinks.map((drink) => (
-						<DrinkCard key={drink.idDrink} drink={drink} />
-					))}
+					<div className="grid grid-cols-1 gap-10 my-10 md:grid-cols-2 2xl:grid-cols-3">
+						{drinks.drinks.map((drink) => (
+							<DrinkCard key={drink.idDrink} drink={drink} />
+						))}
+					</div>
 				</>
 			) : (
 				<>
