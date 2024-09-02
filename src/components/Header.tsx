@@ -16,7 +16,7 @@ export const Header = () => {
 
 	useEffect(() => {
 		fetchCategories();
-	});
+	}, []);
 
 	const handleChange = (
 		e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
