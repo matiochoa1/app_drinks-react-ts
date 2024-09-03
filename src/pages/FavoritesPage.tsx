@@ -28,3 +28,5 @@ export const FavoritesPage = () => {
 		</>
 	);
 };
+
+export default FavoritesPage;
