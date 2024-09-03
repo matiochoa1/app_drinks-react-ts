@@ -11,8 +11,10 @@ import { Recipe } from "../types";
 
 export default function Modal() {
 	const modal = useAppStore((state) => state.modal);
-	const closeModal = useAppStore((state) => state.closeModal);
 	const selectedRecipe = useAppStore((state) => state.selectedRecipe);
+	const favorites = useAppStore((state) => state.favorites);
+	const closeModal = useAppStore((state) => state.closeModal);
+	const addFavorite = useAppStore((state) => state.addFavorite);
 
 	const renderIngredients = () => {
 		const ingredients: JSX.Element[] = [];
@@ -97,8 +99,14 @@ export default function Modal() {
 
 										<button
 											type="button"
-											className="w-full p-3 font-bold text-white uppercase bg-orange-600 rounded shadow hover:bg-orange-500">
-											Agregar a Favoritos
+											className="w-full p-3 font-bold text-white uppercase bg-orange-600 rounded shadow hover:bg-orange-500"
+											onClick={() => addFavorite(selectedRecipe)}>
+											{favorites.some(
+												(favorite) =>
+													favorite.idDrink === selectedRecipe.idDrink
+											)
+												? "Eliminar de favoritos"
+												: "Agregar a favoritos"}
 										</button>
 									</div>
 								</DialogPanel>
