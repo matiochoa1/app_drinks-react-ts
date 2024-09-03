@@ -52,7 +52,7 @@ export const Header = () => {
 			<div className="container px-5 py-16 mx-auto">
 				<div className="flex items-center justify-between">
 					<div>
-						<img src="/public/logo.svg" alt="Logotipo" className="w-32" />
+						<img src="/logo.svg" alt="Logotipo" className="w-32" />
 					</div>
 
 					<nav className="flex gap-4">
